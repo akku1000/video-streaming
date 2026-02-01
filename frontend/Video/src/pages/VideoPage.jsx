@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useAuth } from '../hookcontext/HookContext';
 // import useAuthCheck from '../hooks/Authhook';
 
-const socket = io('http://localhost:5000');
+const socket = io('https://video-streaming-backend-jgil.onrender.com');
 
 const VideoPage = () => {
   const { user } = useAuth();
