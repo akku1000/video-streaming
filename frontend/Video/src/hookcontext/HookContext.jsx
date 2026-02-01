@@ -10,7 +10,7 @@ export const HookProvider = ({ children }) => {
 
   const fetchUser = async () => {
     try {
-      const res = await axios.get("/api/users/profile", {
+      const res = await axios.get("https://video-streaming-backend-jgil.onrender.com/api/users/profile", {
         withCredentials: true,
       });
       setUser(res.data);

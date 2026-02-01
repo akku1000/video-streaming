@@ -14,7 +14,9 @@ const Login = () => {
     e.preventDefault();
     try {
       // sets cookie
-      const res=await axios.post("/api/users/login", { email, password });
+      const res=await axios.post("https://video-streaming-backend-jgil.onrender.com/api/users/login", { email, password },{
+        withCredentials: true,
+      });
       setUser(res.data.user);
       navigate('/dashboard');
     } catch (error) {

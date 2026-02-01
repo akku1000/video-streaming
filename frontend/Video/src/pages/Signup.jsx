@@ -17,7 +17,9 @@ const [formData, setFormData] = useState({
     e.preventDefault();
     try {
       // create user + set cookie
-      const res=await axios.post("/api/users/signup",formData);
+      const res=await axios.post("https://video-streaming-backend-jgil.onrender.com/api/users/signup",formData,{
+        withCredentials: true,
+      });
       setUser(res.data.user);
       navigate('/dashboard');
     } catch (error) {
