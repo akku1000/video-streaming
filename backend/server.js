@@ -13,7 +13,7 @@ connectDB();
 const app = express();
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "https://video-streaming-wine.vercel.app/",
   credentials: true
 }));
 app.use(express.json());
@@ -24,7 +24,7 @@ app.use("/api/users", userRoutes);
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: "https://video-streaming-wine.vercel.app/",
     methods: ["GET", "POST"]
   }
 });

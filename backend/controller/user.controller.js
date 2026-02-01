@@ -10,10 +10,10 @@ const generateacesstoken=async(userid)=>{
 
 const setCookies=async(res,accesstoken)=>{
     res.cookie("accesstoken",accesstoken,{
-        httpOnly:true,// prevent xss attack 
-        secure:process.env.NODE_ENV==="production",
-        sameSite:"strict",//prevents CSRF attack request forgery attack
-        maxAge:15*60*1000
+       httpOnly: true,
+       secure: true,      // Required for HTTPS (Render/Vercel)
+       sameSite: "none",  // Required for cross-domain
+       maxAge: 7 * 24 * 60 * 60 * 1000,
     
     })
 }
