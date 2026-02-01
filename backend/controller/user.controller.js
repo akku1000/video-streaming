@@ -89,7 +89,11 @@ const profile=async(req,res)=>{
 const logout=async(req,res)=>{
   try {
       const accesstoken=req.cookies.accesstoken;
-      res.clearCookie("accesstoken");
+      res.clearCookie("accesstoken", {
+      httpOnly: true,
+      secure: true,      // Must be true for Render/HTTPS
+      sameSite: "none",  // Must be "none" for Vercel/Render cross-domain
+    });
       res.json({message:"logout success"})
   } catch (error) {
     res.status(500).json({message:error.message})

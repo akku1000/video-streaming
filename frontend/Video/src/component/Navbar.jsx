@@ -10,7 +10,7 @@ const Navbar = () => {
   const navigate=useNavigate();
   const handlelogout=async()=>{
      try {
-      await axios.post("https://video-streaming-backend-jgil.onrender.com/api/users/logout",{
+      await axios.post("https://video-streaming-backend-jgil.onrender.com/api/users/logout",{},{
         withCredentials: true,
       });
       setUser(null);
