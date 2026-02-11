@@ -23,10 +23,9 @@ const VideoPage = () => {
   const localStream = useRef(null);
 
   const servers = {
-    iceServers: [
-      { urls: 'stun:stun.l.google.com:19302' },
-      { urls: 'stun:stun1.l.google.com:19302' }
-    ]
+
+    iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
+
   };
 
   // --- 1. Initialize Peer Connection (Shared Logic) ---
